@@ -1,0 +1,2 @@
+../Core/Src/MQTTFunctions.c:3:13:mqtt_thread	16	static
+../Core/Src/MQTTFunctions.c:10:6:MQTT_init	16	static

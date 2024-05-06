@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "TCPFunctions.h"
 #include "UDPFunctions.h"
+#include "MQTTFunctions.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,6 +62,13 @@ const osThreadAttr_t UDPTask_attributes = {
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for MQTTTask */
+osThreadId_t MQTTTaskHandle;
+const osThreadAttr_t MQTTTask_attributes = {
+  .name = "MQTTTask",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -72,6 +80,7 @@ static void MX_USART3_UART_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 void StartTCPTask(void *argument);
 void StartUDPTask(void *argument);
+void StartMQTTTask(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -141,6 +150,9 @@ int main(void)
 
   /* creation of UDPTask */
   UDPTaskHandle = osThreadNew(StartUDPTask, NULL, &UDPTask_attributes);
+
+  /* creation of MQTTTask */
+  MQTTTaskHandle = osThreadNew(StartMQTTTask, NULL, &MQTTTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -375,6 +387,25 @@ void StartUDPTask(void *argument)
     osDelay(1);
   }
   /* USER CODE END StartUDPTask */
+}
+
+/* USER CODE BEGIN Header_StartMQTTTask */
+/**
+* @brief Function implementing the MQTTTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartMQTTTask */
+void StartMQTTTask(void *argument)
+{
+  /* USER CODE BEGIN StartMQTTTask */
+	MQTT_init();
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartMQTTTask */
 }
 
 /**

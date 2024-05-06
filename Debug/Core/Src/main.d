@@ -89,7 +89,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/netbuf.h \
  ../Core/Inc/UDPFunctions.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/udp.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h \
+ ../Core/Inc/MQTTFunctions.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -182,3 +183,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/UDPFunctions.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/udp.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h:
+../Core/Inc/MQTTFunctions.h:
