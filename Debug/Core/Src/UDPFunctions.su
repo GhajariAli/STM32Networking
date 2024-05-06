@@ -1,0 +1,2 @@
+../Core/Src/UDPFunctions.c:10:13:udp_thread	32	static
+../Core/Src/UDPFunctions.c:44:6:UDPServer_init	16	static
