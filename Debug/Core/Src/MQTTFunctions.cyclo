@@ -1,0 +1,2 @@
+../Core/Src/MQTTFunctions.c:3:13:mqtt_thread	1
+../Core/Src/MQTTFunctions.c:10:6:MQTT_init	1
